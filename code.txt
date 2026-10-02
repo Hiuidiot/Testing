@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Survey Report</title>
+    <!-- Tailwind CSS for modern, clean UI component structuring -->
+    <script src="https://tailwindcss.com"></script>
+    <!-- Telegram WebApp SDK to interface directly with the Telegram Client -->
+    <script src="https://telegram.org"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased font-sans pb-10">
+
+    <!-- Sticky Header Navigation -->
+    <header class="bg-blue-900 text-white px-4 py-3 sticky top-0 shadow-md z-50 flex items-center justify-between">
+        <h1 class="font-bold text-sm tracking-wide uppercase">Technical Survey Pipeline Engine</h1>
+        <span id="user-badge" class="text-xs bg-blue-800 px-2 py-1 rounded text-blue-200">Connecting...</span>
+    </header>
+
+    <main class="max-w-2xl mx-auto p-4">
+        <form id="surveyForm" class="space-y-6">
+
+            <!-- Section 1: Core Field Logistics & Temporal Tracking -->
+            <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 space-y-4">
+                <h2 class="text-blue-900 font-bold border-b pb-2 text-base flex items-center gap-2">
+                    📋 Core Metrics & Logistics
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-500 uppercase mb-1">A. Date of Site Visit</label>
+                        <input type="date" id="visitDate" required class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-500 uppercase mb-1">B. Name of Site / Customer</label>
+                        <input type="text" id="customerName" placeholder="e.g., Total Environment" required class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-gray-500 uppercase mb-1">C. Location Address</label>
+                    <textarea id="location" rows="2" placeholder="Enter complete site coordinates or street data..." required class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-gray-500 uppercase mb-1">D. Site Survey Participants (Names & Contacts)</label>
+                    <textarea id="participants" rows="2" placeholder="1. Engineer Name (Phone)&#10;2. Builder Name (Phone)" required class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                </div>
+            </div>
+
+            <!-- Section 2: Architectural Framework Metrics -->
+            <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 space-y-4">
+                <h2 class="text-blue-900 font-bold border-b pb-2 text-base">🏢 E. Brief Details of Estate/Apartment</h2>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-500 uppercase mb-1">Total Flats</label>
+                        <input type="text" id="totalFlats" placeholder="e.g., 200 Nos." class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-500 uppercase mb-1">Total Towers</label>
+                        <input type="text" id="totalTowers" placeholder="e.g., Tower 1 & 2" class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-500 uppercase mb-1">Floors per Tower</label>
+                        <input type="text" id="floorsPerTower" placeholder="e.g., G+29" class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-500 uppercase mb-1">No. of Basements</label>
+                        <input type="text" id="basementCount" placeholder="e.g., 1 connected" class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3: Engineering Infra Parameters -->
+            <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 space-y-4">
+                <h2 class="text-blue-900 font-bold border-b pb-2 text-base">🛠️ F & G. Infrastructure & Routing Details</h2>
+                
+                <div>
+                    <label class="block text-xs font-semibold text-gray-500 uppercase mb-1">F. Main Line Availability Status</label>
+                    <textarea id="mainLineStatus" rows="2" placeholder="Describe MDPE main line run availability and expected distance metrics..." class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-gray-500 uppercase mb-1">G. Engineering Notes & Deviations</label>
+                    <textarea id="otherDetails" rows="4" placeholder="1. Above ground piping constraints...&#10;2. Service regulator position details...&#10;3. Header line deployment strategy..." class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                </div>
+            </div>
+
+            <!-- Section 4: Structural Image Vault Upload Engine -->
+            <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 space-y-4">
+                <h2 class="text-blue-900 font-bold border-b pb-2 text-base">📸 Labeled Site Imagery Records</h2>
+                
+                <div class="space-y-4">
+                    <!-- Image Input Block 1 -->
+                    <div class="border border-dashed border-gray-200 rounded-xl p-4 bg-gray-50 flex flex-col items-center justify-center relative">
+                        <label class="block text-xs font-bold text-gray-600 mb-2">1. Service Regulator (SR) Site Location Photo</label>
+                        <input type="file" id="imgSR" accept="image/*" class="text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                    </div>
+
+                    <!-- Image Input Block 2 -->
+                    <div class="border border-dashed border-gray-200 rounded-xl p-4 bg-gray-50 flex flex-col items-center justify-center relative">
+                        <label class="block text-xs font-bold text-gray-600 mb-2">2. External Wall Riser Routing Photo</label>
+                        <input type="file" id="imgRiser" accept="image/*" class="text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                    </div>
+
+                    <!-- Image Input Block 3 -->
+                    <div class="border border-dashed border-gray-200 rounded-xl p-4 bg-gray-50 flex flex-col items-center justify-center relative">
+                        <label class="block text-xs font-bold text-gray-600 mb-2">3. Basement/Terrace Header Loop Photo</label>
+                        <input type="file" id="imgHeader" accept="image/*" class="text-xs text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Engine Command Interface -->
+            <button type="submit" class="w-full bg-blue-900 text-white font-bold py-3 rounded-xl shadow-md hover:bg-blue-950 transition duration-150 flex items-center justify-center gap-2">
+                🚀 Generate Official PDF Report
+            </button>
+
+        </form>
+    </main>
+
+    <!-- Logic Controller Engine (Telegram WebApp Handshake) -->
+    <script>
+        // Initialize Telegram WebApp context
+        const tg = window.Telegram.WebApp;
+        tg.expand(); // Forces the mini app overlay view to slide completely open vertically
+
+        // Display user data inside header badge if available
+        if (tg.initDataUnsafe && tg.initDataUnsafe.user) {
+            document.getElementById('user-badge').innerText = `Eng: ${tg.initDataUnsafe.user.first_name}`;
+        } else {
+            document.getElementById('user-badge').innerText = "Local Sandbox Dev Mode";
+        }
+
+        // Helper function to read files as Base64 strings for structural payload encapsulation
+        const convertToBase64 = (file) => new Promise((resolve, reject) => {
+            if (!file) resolve(null);
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = (error) => reject(error);
+        });
+
+        // Form Submit Interceptor Loop
